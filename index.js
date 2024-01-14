@@ -28,7 +28,7 @@ button3.onclick = fightDragon;
 
 //GAME FUNCTIONS
 function goStore(){
-    console.log("Going to store.");
+    button1.innerText = "Buy 10 health (10 gold)";
 }
 
 function goCave(){
