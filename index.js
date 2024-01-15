@@ -28,7 +28,7 @@ button3.onclick = fightDragon;
 
 //GAME FUNCTIONS
 function goTown(){
-    text.innerText = "You are in the town square. You see a sign that says Store.";
+    text.innerText = "You are in the town square. You see a sign that says \"Store\".";
     button1.innerText = "Go to store";
     button2.innerText = "Go to cave";
     button3.innerText = "Fight dragon";
