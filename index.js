@@ -58,33 +58,35 @@ function update(location){
 
 //GAME FUNCTIONS
 function goTown(){
-   update(locations[0])
+   update(locations[0]);
 };
 
 function goStore(){
-   update(locations[1])
-}
+   update(locations[1]);
+};
 
 function goCave(){
-    console.log("Going to cave.");
-}
+    update(locations[2]);
+};
 
-function fightDragon(){
-    console.log("Fighting dragon.");
-  }
 
 function buyHealth(){
-
+  gold: gold = gold -10;
+  health: health = health + 10;
   };
   
 function buyWeapon(){
-  
+  console.log("Buying Weapon")
   };
+
+  function fightDragon(){
+    console.log("Fighting dragon.");
+  }
   
   function fightSlime(){
-
+    console.log("Fighting Slime")
   };
   
   function fightBeast(){
-  
+    console.log("Fighting Beast")
   };
