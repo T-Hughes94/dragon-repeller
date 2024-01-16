@@ -241,3 +241,7 @@ function buyHealth(){
   function winGame(){
     update(locations[6]);
   };
+
+  function easterEgg(){
+    update(locations[7]);
+  }
