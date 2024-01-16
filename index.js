@@ -195,6 +195,9 @@ function buyHealth(){
     }else if(monsterHealth <= 0){
       fighting === 2 ? winGame() : defeatMonster();
     }
+    if(Math.random() <= .1){
+    
+    }
   };
 
   function getMonsterAttackValue(level){
