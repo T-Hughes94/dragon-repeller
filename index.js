@@ -183,7 +183,7 @@ function buyHealth(){
     if(health <= 0){
       lose()
     }else if(monsterHealth <= 0){
-      defeatMonster()
+      fighting === 2 ? winGame() : defeatMonster();
     }
   }
 
@@ -200,7 +200,7 @@ function buyHealth(){
   };
   
   function lose() {
-  
+    update(locations[5]);
   };
 
   function restart(){
@@ -213,4 +213,8 @@ function buyHealth(){
     healthText.innerText = health;
     goldText.innerText = gold;
     goTown()
+  };
+
+  function winGame(){
+    update(locations[6]);
   };
