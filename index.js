@@ -8,7 +8,7 @@ let currentWeapon = 0;
 let fighting;
 //combat2
 let monsterHealth;
-let inventory = ["stick","dagger","sword"];
+let inventory = ["stick"];
 //buttons
 const button1 = document.querySelector('#button1');
 const button2 = document.querySelector('#button2');
@@ -98,9 +98,21 @@ function buyHealth(){
     }
   };
   
-function buyWeapon(){
-  console.log("Buying Weapon")
-  };
+  function buyWeapon() {
+    if (currentWeapon < weapons.length) {
+      if (gold >= 30) {
+        gold -= 30;
+        currentWeapon++;
+        goldText.innerText = gold;
+        let newWeapon = weapons[currentWeapon].name;
+        text.innerText = "You now have a " + newWeapon + ".";
+        inventory.push(newWeapon);
+        text.innerText += " In your inventory you have: " + inventory;
+      } else {
+        text.innerText = "You do not have enough gold to buy a weapon.";
+      }
+    }
+  }
 
   function fightDragon(){
     console.log("Fighting dragon.");
