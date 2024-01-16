@@ -88,7 +88,6 @@ function goCave(){
     update(locations[2]);
 };
 
-
 function buyHealth(){
   if(gold >= 10){
   gold = gold -= 10;
@@ -136,14 +135,17 @@ function buyHealth(){
 
   };
 
-  function fightDragon(){
-    console.log("Fighting dragon.");
-  }
-  
   function fightSlime(){
-    console.log("Fighting Slime")
+    fighting = 0;
+    goFight();
   };
   
   function fightBeast(){
-    console.log("Fighting Beast")
+    fighting = 1;
+    goFight();
   };
+
+  function fightDragon(){
+    fighting = 2;
+    goFight();
+  }
