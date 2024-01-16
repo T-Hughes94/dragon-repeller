@@ -37,7 +37,7 @@ const weapons =[{
 {
   name: "sword",
   power: 100
-}]
+}];
 //monters array
 const monsters = [{name: "slime", level: 2, health: 15,},{name: "fanged beast", level: 8, health: 60},{name: "dragon", level: 20, health: 300}]
 //locations array
@@ -177,16 +177,17 @@ function buyHealth(){
   function fightDragon(){
     fighting = 2;
     goFight();
-  }
+  };
   //actions
   function attack(){
     text.innerText = "The " + monsters[fighting].name + " attacks."
     text.innerText += " You attack it with your " + weapons[currentWeapon].name + "."
     health -= getMonsterAttackValue(monsters[fighting].level);
     if(isMonsterHit()){
-      monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1
-    };
-    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+      monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+    }else{
+      text.innerText = " You miss.";
+    }
     healthText.innerText = health;
     monsterHealthText.innerText = monsterHealth;
     if(health <= 0){
@@ -194,11 +195,15 @@ function buyHealth(){
     }else if(monsterHealth <= 0){
       fighting === 2 ? winGame() : defeatMonster();
     }
-  }
+  };
 
   function getMonsterAttackValue(level){
     const hit = (level * 5) - (Math.floor(Math.random() * xp));
     return hit > 0 ? hit : 0;
+  };
+
+  function isMonsterHit(){
+    return Math.random() > .2
   }
 
   function dodge(){
