@@ -184,7 +184,7 @@ function buyHealth(){
     text.innerText += " You attack it with your " + weapons[currentWeapon].name + "."
     health -= getMonsterAttackValue(monsters[fighting].level);
     if(isMonsterHit()){
-    
+      monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1
     };
     monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
     healthText.innerText = health;
